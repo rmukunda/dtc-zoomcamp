@@ -29,6 +29,13 @@ where fare_amount = 0
 ;
 --8333
 
+--Question 5
+
+CREATE OR REPLACE TABLE `playground-385016.ny_taxi_zoomcamp.fhv_partitioned_tripdata`
+PARTITION BY DATE(tpep_dropoff_datetime)
+CLUSTER BY VendorID AS (
+  SELECT * FROM `playground-385016.ny_taxi_zoomcamp.yellow_tripdata`
+);
 
 
 --Question 6
